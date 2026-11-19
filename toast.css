@@ -1,0 +1,13 @@
+/* Cipher — desktop notifications. */
+@import url("./core/alias.css");
+@import url("./core/tokens.css");
+@import url("./core/base.css");
+html:has(> body.DesktopToastContainer),
+html body.DesktopToastContainer { background: transparent !important; }
+html .DesktopToastContainer .DesktopToastBackground,
+html .DesktopToastContainer .DesktopToastTemplate { background: transparent !important; }
+/* CIPHER notifications: system alerts */
+html .DesktopToastContainer .DesktopToastPopup { position: relative; border-radius: 0 !important; border: none !important; background: #0A0F1A !important; box-shadow: inset 3px 0 0 var(--cp-mag, #FF3FA4), inset 0 0 0 1px rgba(160,200,255,.18) !important; padding-top: 16px; }
+html .DesktopToastContainer .DesktopToastPopup::after { content: "\26A0 SYSTEM ALERT"; position: absolute; left: 12px; top: 4px; font: 9px Consolas, monospace; letter-spacing: .24em; color: var(--cp-mag, #FF3FA4); }
+html .DesktopToastContainer .DesktopToastTemplate :is(.Header .Title,.GroupMessageUserName,.IngameTitle) { font-family: Bahnschrift, sans-serif !important; letter-spacing: .1em; text-transform: uppercase; color: #E4ECFF !important; }
+html .DesktopToastContainer .DesktopToastTemplate :is(.StandardNotificationDescription,.GroupMessageBody,.StandardNotificationSubText) { color: #A9B6D3 !important; }

@@ -1,0 +1,1 @@
+:root { --cp-scan: 0; } html::before { background-image: none !important; background-color: var(--cp-bg) !important; }

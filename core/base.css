@@ -1,0 +1,18 @@
+/* CIPHER — base */
+html, body { font-family: "Segoe UI", sans-serif !important; color: var(--t-fg); }
+::selection { background: var(--cp-mag); color: #06080E; }
+:where(:focus-visible) { outline: 1px solid var(--cp-cyan); outline-offset: 2px; }
+::-webkit-scrollbar { width: 5px; height: 5px; background: transparent; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--cp-line-2); }
+::-webkit-scrollbar-thumb:hover { background: var(--cp-cyan); }
+::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
+::-webkit-scrollbar-corner { background: transparent; }
+@keyframes mr-fade-up { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes cp-scan { from { transform: translateY(-20vh); } to { transform: translateY(120vh); } }
+@keyframes cp-blink { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+@keyframes cp-stream { from { background-position: 0 0; } to { background-position: 0 -240px; } }
+@keyframes cp-out { to { opacity: 0; visibility: hidden; } }
+@keyframes cp-bar { from { width: 0; } to { width: 100%; } }
+@keyframes cp-shake { 0% { transform: translate(0); } 20% { transform: translate(-2px, 1px); } 40% { transform: translate(2px, -1px); } 60% { transform: translate(-1px, 0); } 80% { transform: translate(1px, 1px); } 100% { transform: translate(0); } }
+@keyframes cp-in { from { opacity: 0; } to { opacity: 1; } }

@@ -1,0 +1,38 @@
+/* CIPHER — tokens. Blue-black, neon cyan, magenta, electric purple. */
+:root {
+    --cp-bg: #06080E;
+    --cp-panel: rgba(9,13,22,.92);
+    --cp-panel-2: #0E1422;
+    --cp-cyan: var(--cp-p-cyan, #00D9FF);
+    --cp-mag: var(--cp-p-mag, #FF3FA4);
+    --cp-violet: var(--cp-p-violet, #8F5BFF);
+    --cp-c-15: color-mix(in srgb, var(--cp-cyan) 15%, transparent);
+    --cp-c-35: color-mix(in srgb, var(--cp-cyan) 35%, transparent);
+    --cp-m-20: color-mix(in srgb, var(--cp-mag) 20%, transparent);
+    --cp-line: rgba(160,200,255,.10);
+    --cp-line-2: rgba(160,200,255,.22);
+    --cp-head: "Bahnschrift", "Segoe UI", sans-serif;
+    --cp-mono: Consolas, "Cascadia Mono", monospace;
+    --cp-glitch: 1.5px 0 0 color-mix(in srgb, var(--cp-mag) 80%, transparent), -1.5px 0 0 color-mix(in srgb, var(--cp-cyan) 80%, transparent);
+    --cp-cut: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+    --t-accent: var(--cp-cyan);
+    --t-accent-2: var(--cp-mag);
+    --t-alert: var(--cp-mag);
+    --t-bg: var(--cp-bg);
+    --t-panel: var(--cp-panel-2);
+    --t-ink: #06080E;
+    --t-fg: #E4ECFF;
+    --t-fg-2: #A9B6D3;
+    --t-fg-3: #6E7C9C;
+    --t-fg-4: #45506A;
+    --t-line: var(--cp-line);
+    --mr-r: 0px; --mr-r-lg: 0px; --mr-r-md: 0px; --mr-r-sm: 0px; --mr-r-pill: 0px;
+    --mr-glass: var(--cp-panel); --mr-glass-strong: var(--cp-panel-2); --mr-glass-solid: var(--cp-panel-2);
+    --mr-glass-filter: none; --mr-glass-edge: inset 0 0 0 1px var(--cp-line);
+    --mr-font: "Segoe UI", sans-serif; --mr-font-display: var(--cp-head); --mr-font-mono: var(--cp-mono);
+    --mr-grad: linear-gradient(90deg, var(--cp-cyan), var(--cp-violet));
+    --mr-grad-soft: linear-gradient(90deg, var(--cp-c-15), transparent 85%);
+    --mr-on-accent: #06080E;
+    --mr-t-1: 80ms; --mr-t-2: 160ms; --mr-t-3: 260ms;
+    --mr-spot: none;
+}

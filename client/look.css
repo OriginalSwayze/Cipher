@@ -1,0 +1,96 @@
+/* CIPHER — the look */
+html :is(.UpdatesContainer .Name, .ShowcaseHeader .Focusable, .ShowcaseHeader .DialogDropDown_CurrentDisplay, .AppDetailsSection .SectionHeader, h2.SectionHeader, .HomeBox .Bar .Label) {
+    font-family: var(--cp-head) !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: .16em !important; color: var(--t-fg) !important;
+}
+html :is(.UpdatesContainer .Name, .ShowcaseHeader .Focusable, .ShowcaseHeader .DialogDropDown_CurrentDisplay) { font-size: 16px !important; }
+html .UpdatesContainer .Name::before { content: "\25B8 "; color: var(--cp-mag); }
+html :is(.AppDetailsSection .SectionHeader, h2.SectionHeader) { font-size: 12px !important; }
+html .AppDetailsSection .SectionHeader::before { content: "SYS." !important; width: auto !important; height: auto !important; margin-right: 6px; background: none !important; box-shadow: none !important; transform: none !important; border-radius: 0 !important; color: var(--cp-cyan) !important; font-family: var(--cp-mono); font-weight: 400; letter-spacing: .1em; }
+html :is(.PlayBar .PlayBarLabel, .UpdatesContainer .EventTime, .LeftListSizableContainer .SearchBar .MenuHeader .ViewName, .ReactVirtualized__List .SectionName) {
+    font-family: var(--cp-mono) !important; font-size: 10px !important; font-weight: 400 !important; letter-spacing: .16em !important; text-transform: uppercase !important; color: var(--t-fg-3) !important;
+}
+html .ReactVirtualized__List .SectionName { color: var(--cp-cyan) !important; }
+html .ReactVirtualized__List .SectionName::before { content: "DIR // "; color: var(--t-fg-4); }
+html .PlayBar :is(.LastPlayedInfo, .PlayBarDetailLabel) { font-family: var(--cp-head) !important; font-size: 14px !important; color: var(--t-fg) !important; }
+html.cp-glitch :is(.UpdatesContainer .Name, .AppDetailsSection .SectionHeader, .SuperNavMenu.Selected > .MenuButton) { text-shadow: var(--cp-glitch) !important; animation: cp-shake .18s steps(2) 1; }
+
+/* Title bar: the restricted system's header */
+html .OuterFrame > .TopBar { background: linear-gradient(rgba(6,8,14,.96), rgba(6,8,14,.75)) !important; box-shadow: inset 0 -1px 0 var(--cp-line-2) !important; }
+html .RootMenuBar .RootMenuButton .SteamButton::before { width: 12px; height: 12px; border-radius: 0; background: var(--cp-mag); clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); box-shadow: none; animation: cp-blink 2.2s infinite; }
+html .RootMenuBar .RootMenuButton .SteamButton::after { content: "CIPHER"; font-family: var(--cp-head); font-weight: 700; font-size: 15px; letter-spacing: .4em; color: var(--t-fg); text-shadow: var(--cp-glitch); }
+html .RootMenuBar .RootMenuButton { font-family: var(--cp-mono) !important; font-size: 11px !important; letter-spacing: .1em !important; text-transform: uppercase !important; color: var(--t-fg-3) !important; border-radius: 0 !important; }
+html .RootMenuBar .RootMenuButton:hover { background: transparent !important; color: var(--cp-cyan) !important; }
+html .TitleBarControls .Button, html .TitleBarControls .AccountMenu { border-radius: 0 !important; background: transparent !important; box-shadow: inset 0 0 0 1px var(--cp-line-2) !important; }
+html .TitleBarControls .Button:hover, html .TitleBarControls .AccountMenu:hover { box-shadow: inset 0 0 0 1px var(--cp-cyan), 0 0 12px var(--cp-c-35) !important; transform: none !important; }
+html .TitleBarControls .AccountMenu { font-family: var(--cp-mono) !important; text-transform: uppercase; letter-spacing: .08em; font-size: 11px !important; }
+html .TitleBarControls .AccountMenu .avatarHolder, html .TitleBarControls .AccountMenu img.avatar { border-radius: 0 !important; }
+html .TitleBarControls .AccountMenu .WalletBalance { background: transparent !important; color: var(--cp-cyan) !important; font-family: var(--cp-mono) !important; }
+
+/* Panels: cut-corner terminals with cyan and magenta corner ticks */
+html .MainPanel {
+    position: relative; border-radius: 0 !important; background: var(--cp-panel) !important; box-shadow: none !important;
+    clip-path: var(--cp-cut) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+}
+html .MainPanel::after {
+    content: "" !important; position: absolute !important; inset: 0 !important; pointer-events: none; z-index: 20; display: block !important; opacity: 1 !important; border: none !important; border-radius: 0 !important; -webkit-mask: none !important; mask: none !important;
+    background:
+        linear-gradient(225deg, var(--cp-cyan) 0 13px, transparent 13px),
+        linear-gradient(45deg, var(--cp-mag) 0 13px, transparent 13px),
+        linear-gradient(var(--cp-cyan), var(--cp-cyan)) 0 0 / 60px 1px no-repeat,
+        linear-gradient(var(--cp-mag), var(--cp-mag)) 100% 100% / 60px 1px no-repeat !important;
+    box-shadow: inset 0 0 0 1px var(--cp-line) !important;
+}
+
+/* The database (game list) */
+html .HomeBox .Bar.Selected { background: var(--mr-grad-soft) !important; box-shadow: inset 2px 0 0 var(--cp-cyan) !important; }
+html .SearchInput input.DialogInput, html .SearchInput input.DialogTextInputBase { border-radius: 0 !important; background-color: rgba(0,0,0,.5) !important; border: 1px solid var(--cp-line-2) !important; font-family: var(--cp-mono) !important; font-size: 12px !important; color: var(--cp-cyan) !important; }
+html .SearchInput input.DialogInput:focus { border-color: var(--cp-cyan) !important; box-shadow: 0 0 10px var(--cp-c-35) !important; }
+html .ReactVirtualized__List .SectionRule { height: 1px !important; background: var(--cp-line) !important; }
+html .ReactVirtualized__List .Container:has(> .GameListEntryContainer) { border-radius: 0 !important; }
+html .ReactVirtualized__List .GameListEntryContainer > span { font-family: var(--cp-head) !important; font-size: 13px !important; }
+html .ReactVirtualized__List .Container:has(> .GameListEntryContainer):hover { background: var(--cp-c-15) !important; }
+html .ReactVirtualized__List .Container:has(> .GameListEntryContainer):hover .GameListEntryContainer { transform: none !important; }
+html .ReactVirtualized__List .Container:has(> .GameListEntryContainer):hover .GameListEntryContainer > span { text-shadow: var(--cp-glitch); }
+html body .ReactVirtualized__List .Container.Selected.Selected:has(> .GameListEntryContainer) { background: linear-gradient(90deg, var(--cp-m-20), transparent) !important; box-shadow: inset 2px 0 0 var(--cp-mag) !important; }
+html body .ReactVirtualized__List .Container.Selected.Selected:has(> .GameListEntryContainer) .GameListEntryContainer > span { color: #fff !important; font-weight: 600 !important; }
+html .ReactVirtualized__List .Container.Selected:has(> .GameListEntryContainer)::before { display: none !important; }
+html .ReactVirtualized__List .Container.Running:has(> .GameListEntryContainer) .GameListEntryContainer > span::after { content: "  [LIVE]"; color: var(--cp-mag); font: 10px var(--cp-mono); letter-spacing: .1em; animation: cp-blink 1s infinite; }
+html .ReactVirtualized__List .Container:not(.Installed):has(> .GameListEntryContainer) .GameListEntryContainer > span { opacity: .55; }
+
+/* Home: records */
+html .UpdatesContainer { background: transparent !important; }
+html .UpdatesContainer .HoversEnabled, html .LibraryItemBox, html .LibraryItemBox > * { border-radius: 0 !important; }
+html .LibraryItemBox { box-shadow: 0 0 0 1px var(--cp-line) !important; transition: box-shadow .16s, transform .16s !important; }
+html .LibraryItemBox:hover { transform: translateY(-3px) !important; box-shadow: -2px 0 0 var(--cp-mag), 2px 0 0 var(--cp-cyan), 0 0 0 1px var(--cp-c-35), 0 14px 30px rgba(0,0,0,.6) !important; }
+html .LibraryItemBox::after { content: ""; position: absolute; inset: 0; z-index: 5; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(0,0,0,.22) 0 1px, transparent 1px 3px); opacity: 0; transition: opacity .16s; }
+html .LibraryItemBox:hover::after { opacity: 1; }
+html .LibraryItemBoxShine { display: none !important; }
+html .PageLeft, html .PageRight { border-radius: 0 !important; background: var(--cp-panel-2) !important; box-shadow: inset 0 0 0 1px var(--cp-line-2) !important; }
+
+/* Game page: a cinematic subject file */
+html .AppDetailsMain .TopCapsule { border-radius: 0 !important; }
+html .AppDetailsMain .TopCapsule::after { content: "SUBJECT FILE // CLEARANCE 5"; position: absolute; left: 22px; top: 18px; z-index: 6; pointer-events: none; padding: 3px 8px; font: 10px var(--cp-mono); letter-spacing: .24em; color: var(--cp-cyan); background: rgba(6,8,14,.72); box-shadow: inset 0 0 0 1px var(--cp-c-35); }
+html .AppDetailsMain .TopCapsule::before { content: ""; position: absolute; inset: 0; z-index: 5; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(0,0,0,.18) 0 1px, transparent 1px 3px); }
+html .AppDetailsMain .PlayBar > .InnerContainer { border-radius: 0 !important; background: rgba(6,8,14,.9) !important; box-shadow: inset 0 0 0 1px var(--cp-line), inset 0 -1px 0 var(--cp-mag) !important; clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)) !important; }
+html .PlayButton.ButtonChild { border-radius: 0 !important; background: var(--cp-cyan) !important; box-shadow: 0 0 18px var(--cp-c-35) !important; clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px) !important; animation: none !important; }
+html .PlayButton.ButtonChild .ButtonText { font-family: var(--cp-head) !important; font-weight: 700 !important; font-size: 16px !important; letter-spacing: .3em !important; text-transform: uppercase !important; color: #06080E !important; }
+html .PlayButton.ButtonChild svg, html .PlayButton.ButtonChild svg path { fill: #06080E !important; }
+html .PlayButton.ButtonChild::after { display: none !important; }
+html .PlayButton.ButtonChild:hover { background: var(--cp-mag) !important; box-shadow: 0 0 22px var(--cp-m-20) !important; transform: none !important; }
+html .PlayButton.ButtonChild:hover .ButtonText { animation: cp-shake .2s steps(2) 2; }
+html .PlayBar .RightControls .MenuButton { border-radius: 0 !important; background: transparent !important; box-shadow: inset 0 0 0 1px var(--cp-line-2) !important; }
+html .LinksSection .LinkInner { border-radius: 0 !important; background: transparent !important; box-shadow: inset 0 0 0 1px var(--cp-line) !important; color: var(--t-fg-2) !important; font-family: var(--cp-mono) !important; font-size: 11px !important; text-transform: uppercase !important; letter-spacing: .14em !important; }
+html .LinksSection .LinkInner:hover { box-shadow: inset 0 0 0 1px var(--cp-cyan) !important; color: var(--cp-cyan) !important; transform: none !important; }
+html .AppDetailsSection:not(.LinksSection) > .Panel, html .PartnerEvent.Event { border-radius: 0 !important; background: rgba(6,8,14,.7) !important; box-shadow: inset 0 0 0 1px var(--cp-line), inset 2px 0 0 var(--cp-violet) !important; }
+html .PartnerEventFeaturedHeader { background: var(--cp-violet) !important; color: #fff !important; font-family: var(--cp-mono) !important; letter-spacing: .2em; text-transform: uppercase; }
+html .ProgressBar .Unlocked, html .ProgressBar [class*="Unlocked"], html .PlayBar .DetailsProgressBar { border-radius: 0 !important; background: linear-gradient(90deg, var(--cp-violet), var(--cp-cyan)) !important; box-shadow: 0 0 8px var(--cp-c-35) !important; }
+html .ProgressBar, html .PlayBar .DetailsProgressContainer { border-radius: 0 !important; background: var(--cp-line) !important; }
+
+/* Startup: the clearance check */
+html .od-boot.cp-gate { position: fixed; inset: 0; z-index: 10000; pointer-events: none; background: var(--cp-bg); display: grid; place-items: center; animation: cp-out 300ms ease 3100ms forwards; font-family: var(--cp-mono); }
+html .od-boot.cp-gate .box { width: 420px; padding: 26px 30px; box-shadow: inset 0 0 0 1px var(--cp-line-2); clip-path: var(--cp-cut); background: var(--cp-panel-2); }
+html .od-boot.cp-gate .h { font: 700 22px var(--cp-head); letter-spacing: .5em; color: var(--t-fg); text-shadow: var(--cp-glitch); }
+html .od-boot.cp-gate .r { margin-top: 6px; font-size: 11px; letter-spacing: .28em; color: var(--cp-mag); animation: cp-blink .5s 4; }
+html .od-boot.cp-gate .bar { margin-top: 20px; height: 4px; background: var(--cp-line); }
+html .od-boot.cp-gate .bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--cp-violet), var(--cp-cyan)); animation: cp-bar 2s cubic-bezier(.6,0,.4,1) .3s backwards; }
+html .od-boot.cp-gate .g { margin-top: 14px; font-size: 12px; letter-spacing: .3em; color: var(--cp-cyan); opacity: 0; animation: cp-in .1s 2.4s forwards; }

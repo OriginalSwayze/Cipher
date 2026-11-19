@@ -1,0 +1,15 @@
+/* CIPHER — a dark megacity night: cyan haze above, magenta smog below, fine scanlines, a scanning band. */
+html { background: var(--cp-bg) !important; }
+body { background: transparent !important; }
+html::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+        repeating-linear-gradient(0deg, rgba(0,0,0,.28) 0 1px, transparent 1px 3px),
+        radial-gradient(70% 45% at 85% 0%, color-mix(in srgb, var(--cp-cyan) 11%, transparent), transparent 70%),
+        radial-gradient(80% 55% at 10% 110%, color-mix(in srgb, var(--cp-mag) 14%, transparent), transparent 70%),
+        radial-gradient(50% 40% at 50% 100%, color-mix(in srgb, var(--cp-violet) 12%, transparent), transparent 70%),
+        linear-gradient(90deg, rgba(160,200,255,.025) 1px, transparent 1px) 0 0 / 64px 64px,
+        var(--cp-bg); }
+html::after { content: ""; position: fixed; left: 0; right: 0; top: 0; height: 16vh; z-index: -1; pointer-events: none;
+    background: linear-gradient(transparent, color-mix(in srgb, var(--cp-cyan) 6%, transparent) 70%, color-mix(in srgb, var(--cp-cyan) 14%, transparent) 99%, transparent);
+    animation: cp-scan 7s linear infinite; opacity: var(--cp-scan, 1); }
+.Wrapper.ForceOpaqueBackground, .FocusNavigationRoot, .Root, .OuterFrame, .ContentFrame { background: transparent !important; }

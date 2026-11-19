@@ -1,0 +1,83 @@
+html .od-hud, html .TopBar .od-hud, html .TopBar .od-hud * { pointer-events: none !important; }
+/* ==========================================================================
+   CIPHER — layout: the restricted terminal.
+     · The database (game list) is a slim locked rail on the far left; hover it
+       and it slides open over the page, then locks again
+     · The page fills the rest as one cut-corner terminal
+     · Navigation is a row of access codes, [01] STORE ... [04] PROFILE
+     · Along the foot: a trace monitor strip (clock, node, session, trace, link)
+     · Add / transfers / comms stack at the foot of the rail
+   ========================================================================== */
+html .Library > .Container { position: relative !important; padding: 8px 14px 14px 96px !important; gap: 0 !important; }
+html .Library > .Container > .LibraryWindowDivider { opacity: 0 !important; pointer-events: none !important; width: 0 !important; }
+html .Library > .Container > div:not(.MainPanel):first-child {
+    position: absolute !important; left: 14px; top: 8px; bottom: 14px; z-index: 40; width: var(--cp-rail, 68px) !important; min-width: 0 !important; max-width: none !important;
+    overflow: hidden !important; border-radius: 0 !important; box-sizing: border-box; padding-bottom: 150px !important;
+    background:
+        linear-gradient(var(--cp-panel), var(--cp-panel)) 0 0 / 100% 100%,
+        var(--cp-bg) !important;
+    box-shadow: inset 0 0 0 1px var(--cp-line), inset -1px 0 0 var(--cp-c-35) !important;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%) !important;
+    -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+    transition: width .32s cubic-bezier(.2,.8,.2,1), box-shadow .32s !important;
+}
+html .Library > .Container > div:not(.MainPanel):first-child > * { width: 360px !important; min-width: 360px !important; max-width: 360px !important; opacity: 0; transition: opacity .18s; }
+html .Library > .Container > div:not(.MainPanel):first-child:is(:hover, :has(:focus-visible)) { width: 360px !important; box-shadow: inset 0 0 0 1px var(--cp-c-35), 40px 0 80px rgba(0,0,0,.75) !important; }
+html .Library > .Container > div:not(.MainPanel):first-child:is(:hover, :has(:focus-visible)) > * { opacity: 1; transition-delay: .1s; }
+
+/* The locked rail: a data stream and a vertical stamp */
+html .Library > .Container > div:not(.MainPanel):first-child::before {
+    content: "CLASSIFIED DATABASE  \25C6  HOVER TO DECRYPT"; position: absolute; left: 0; top: 0; width: 68px; bottom: 150px; z-index: 2; pointer-events: none;
+    writing-mode: vertical-rl; transform: rotate(180deg); display: flex; align-items: center; justify-content: center;
+    font: 600 11px var(--cp-head); letter-spacing: .42em; color: var(--t-fg-3);
+    background:
+        linear-gradient(90deg, transparent 31px, var(--cp-c-15) 31px 37px, transparent 37px),
+        repeating-linear-gradient(0deg, transparent 0 9px, color-mix(in srgb, var(--cp-cyan) 40%, transparent) 9px 11px, transparent 11px 17px, color-mix(in srgb, var(--cp-mag) 35%, transparent) 17px 18px, transparent 18px 40px) 31px 0 / 6px 240px repeat-y;
+    animation: cp-stream 6s linear infinite; transition: opacity .15s;
+}
+html .Library > .Container > div:not(.MainPanel):first-child:is(:hover, :has(:focus-visible))::before { opacity: 0; }
+
+/* Access codes */
+html .TopBar > .SuperNavBar { justify-content: flex-start !important; padding-left: 96px !important; }
+html .SuperNavBar .SuperNav { background: transparent !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; gap: 2px !important; padding: 0 !important; }
+html .SuperNav > svg.Arrow { display: none !important; }
+html .SuperNav .SuperNavMenu > .MenuButton {
+    height: 30px !important; padding: 0 11px !important; border-radius: 0 !important; background: transparent !important; box-shadow: inset 0 -1px 0 var(--cp-line-2) !important;
+    font-family: var(--cp-head) !important; font-weight: 600 !important; font-size: 12px !important; letter-spacing: .14em !important; text-transform: uppercase !important; color: var(--t-fg-3) !important;
+}
+html .SuperNav .SuperNavMenu > .MenuButton::before { display: inline !important; position: static !important; font: 10px var(--cp-mono); letter-spacing: .1em; color: var(--t-fg-4); margin-right: 6px; }
+html .SuperNav .SuperNavMenu:nth-last-child(4) > .MenuButton::before { content: "[01]"; }
+html .SuperNav .SuperNavMenu:nth-last-child(3) > .MenuButton::before { content: "[02]"; }
+html .SuperNav .SuperNavMenu:nth-last-child(2) > .MenuButton::before { content: "[03]"; }
+html .SuperNav .SuperNavMenu:nth-last-child(1) > .MenuButton::before { content: "[04]"; }
+html .SuperNav .SuperNavMenu:hover > .MenuButton { color: var(--t-fg) !important; box-shadow: inset 0 -1px 0 var(--cp-cyan) !important; text-shadow: var(--cp-glitch); }
+html.mr-js .SuperNav .SuperNavMenu.Selected > .MenuButton, html .SuperNav .SuperNavMenu.Selected > .MenuButton { color: var(--cp-cyan) !important; background: linear-gradient(transparent, var(--cp-c-15)) !important; box-shadow: inset 0 -2px 0 var(--cp-cyan) !important; }
+html .SuperNav .SuperNavMenu.Selected > .MenuButton::before { color: var(--cp-mag) !important; }
+html .SuperNav .mr-nav-indicator { display: none !important; }
+
+/* Trace monitor: a status strip along the foot of the terminal */
+html .Library > .Container { padding-bottom: 42px !important; }
+html .OuterFrame > .ContentFrame:not(:has(.Library)) { padding-bottom: 40px !important; box-sizing: border-box !important; }
+html:not(:has(.Library)) .od-hud { left: 14px !important; }
+html .od-hud {
+    position: fixed !important; left: 96px; right: 14px; bottom: 12px; height: 24px; width: auto; margin: 0 !important; z-index: 32; pointer-events: none; box-sizing: border-box;
+    display: flex; align-items: center; gap: 22px; padding: 0 14px; background: rgba(6,8,14,.9); box-shadow: inset 0 0 0 1px var(--cp-line-2), inset 2px 0 0 var(--cp-mag);
+    font: 10px var(--cp-mono); letter-spacing: .16em; color: var(--t-fg-3); text-transform: uppercase; white-space: nowrap; overflow: hidden;
+}
+html .od-hud .sp { flex: 1; }
+html .od-hud b { font-weight: 400; color: var(--t-fg); }
+html .od-hud .clk { font: 600 13px var(--cp-head); letter-spacing: .1em; color: var(--cp-cyan); text-shadow: 0 0 8px var(--cp-c-35); }
+html .od-hud .tr { display: inline-block; width: 90px; height: 4px; margin: 0 8px; vertical-align: middle; background: var(--cp-line); }
+html .od-hud .tr i { display: block; height: 100%; background: linear-gradient(90deg, var(--cp-violet), var(--cp-mag)); }
+html .od-hud .hot { color: var(--cp-mag); animation: cp-blink 1s infinite; }
+
+/* Utility keys stack at the foot of the rail */
+html .BottomBar {
+    left: 14px !important; right: auto !important; bottom: 14px !important; margin: 0 !important; width: 68px !important; height: auto !important;
+    flex-direction: column !important; align-items: stretch !important; gap: 4px !important; padding: 6px !important; box-sizing: border-box; z-index: 41;
+}
+html .BottomBar::before { display: none !important; }
+html .BottomBar .DownloadStatus::before, html .BottomBar .DownloadStatus::after { display: none !important; }
+html .BottomBar :is(.AddGameButton, .DownloadStatus, .FriendsButton) { height: 40px !important; width: 100% !important; min-width: 0 !important; padding: 0 !important; justify-content: center; border-radius: 0 !important; background: rgba(0,0,0,.5) !important; box-shadow: inset 0 0 0 1px var(--cp-line-2) !important; color: var(--t-fg-2) !important; }
+html .BottomBar :is(.AddGameButton, .DownloadStatus, .FriendsButton):hover { box-shadow: inset 0 0 0 1px var(--cp-cyan), 0 0 10px var(--cp-c-35) !important; color: var(--cp-cyan) !important; }
+html .BottomBar :is(.AddGameButton, .DownloadStatus, .FriendsButton) :is(.Text, .Queue) { display: none !important; }

@@ -1,0 +1,16 @@
+/* Cipher — the "Sign in to Steam" window. */
+@import url("./core/alias.css");
+@import url("./core/tokens.css");
+@import url("./core/base.css");
+@import url("./core/backdrop.css");
+html .Login, html .Login.AnimatedBackground, html .LoginAnimatedBackground,
+html .Login .LoginStatusContainer, html .Login .SpinnerLoaderContainer { background: transparent !important; }
+html .Login.AnimatedBackground::before, html .LoginAnimatedBackground::after, html .Login video { display: none !important; }
+html .Login .SpinnerLoaderContainer { position: relative; }
+html .Login .SpinnerLoaderContainer > img { opacity: 0 !important; }
+/* CIPHER sign-in */
+html .Login .SpinnerLoaderContainer::before { content: "VERIFYING CLEARANCE"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font: 12px Consolas, monospace; letter-spacing: .3em; color: #00D9FF; white-space: nowrap; animation: cp-blink 1s infinite; }
+html .Login .LoadingStatus, html .Login .LoadingStatus > .LoginStatus { font-family: Bahnschrift, sans-serif !important; text-transform: uppercase; letter-spacing: .16em; color: #A9B6D3 !important; }
+html .Login .ProgressBar { border-radius: 0 !important; background: linear-gradient(90deg, #8F5BFF, #00D9FF) !important; }
+html .Login .Avatar img { border-radius: 0 !important; box-shadow: -2px 0 0 #FF3FA4, 2px 0 0 #00D9FF !important; }
+html .Login .UserContainer > .PersonaName { font-family: Bahnschrift, sans-serif !important; letter-spacing: .24em; text-transform: uppercase; color: #E4ECFF !important; }
