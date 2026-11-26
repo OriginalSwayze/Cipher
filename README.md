@@ -1,6 +1,6 @@
 # Cipher
 
-**A restricted operating system in a dystopian megacity.** Blue-black, neon cyan, magenta and electric purple. A [Millennium](https://steambrew.app) theme for the Steam client.
+**A restricted operating system in a dystopian megacity.** Blue-black, neon cyan, magenta and electric purple. A Steam client theme for [Beyond Steam](https://github.com/OriginalSwayze/Beyond-Steam) and [Millennium](https://steambrew.app).
 
 ![Cipher: library](media/library.gif)
 
@@ -14,13 +14,14 @@
 
 ## Install
 
-1. Install [Millennium](https://steambrew.app).
-2. Find **Cipher** in the Millennium theme browser, or download this repository into `Steam/millennium/themes/Cipher`.
-3. Open **Steam → Millennium → Themes** and pick **Cipher**.
+- **With [Beyond Steam](https://github.com/OriginalSwayze/Beyond-Steam) (easiest):** in Steam press **Ctrl+Shift+B**, open
+  **Get more** and install **Cipher**.
+- **By hand:** download **Cipher.zip** from the [latest release](https://github.com/OriginalSwayze/Cipher/releases/latest) and unzip
+  it into `%APPDATA%\Beyond Steam\themes\Cipher` (Beyond Steam) or `Steam\millennium\themes\Cipher` (Millennium).
 
 ## Options
 
-Open **Millennium → Themes → Cipher** to change:
+In Beyond Steam's **Theme options** tab (or **Millennium → Themes → Cipher**) you can change:
 
 Palette (Neon, Toxic, Ultraviolet, Redline) · Database rail · Glitches · Scanlines · Density · What's New · Readout · Startup screen · Motion · Privacy · Contrast · Focus rings · Text size
 
